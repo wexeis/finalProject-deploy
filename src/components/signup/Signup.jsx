@@ -18,7 +18,7 @@ function Signup({ hello, handleButtonClick}) {
     e.preventDefault();
     try {
       console.log(firstName + lastName + email +  password)
-      const response = await axios.post("http://localhost:5000/user", {
+      const response = await axios.post("https://final-project-idzh.onrender.com/user", {
         firstName: firstName,
         lastName: lastName,
         email: email,

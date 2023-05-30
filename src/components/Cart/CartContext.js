@@ -1,5 +1,5 @@
 import { createContext, useState, useEffect } from "react";
-const url = "http://localhost:5000"
+const url = "https://final-project-idzh.onrender.com"
 
 const CartContext = createContext();
 
@@ -15,7 +15,7 @@ export function CartProvider({ children }) {
 
   const fetchData = async () => {
     try {
-      const response = await fetch(`http://localhost:5000/cart/${UserId}`);
+      const response = await fetch(`https://final-project-idzh.onrender.com/cart/${UserId}`);
       const dataFetched = await response.json();
       setData(dataFetched);
 

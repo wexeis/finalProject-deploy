@@ -15,7 +15,7 @@ function Orders() {
 
   const getOrderData = () => {
     axios
-      .get("http://localhost:5000/order")
+      .get("https://final-project-idzh.onrender.com/order")
       .then((response) => {
         setOrderslist(response.data);
       })
@@ -26,7 +26,7 @@ function Orders() {
 
   const handleUpdate = (orderId, status) => {
     axios
-      .patch(`http://localhost:5000/order/status/${orderId}`, { status })
+      .patch(`https://final-project-idzh.onrender.com/order/status/${orderId}`, { status })
       .then((response) => {
         toast.success(`Order status updated to ${status}`);
         getOrderData();

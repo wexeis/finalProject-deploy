@@ -9,7 +9,7 @@ export function ProductProvider({ children }) {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('https://github.com/wexeis/finalProject-deploy.git/product');
+        const response = await fetch('https://final-project-idzh.onrender.com/product');
         const jsonData = await response.json();
         setProduct(jsonData);
       } catch (error) {

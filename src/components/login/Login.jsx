@@ -24,7 +24,7 @@ function Login({cancel}) {
     } else if (!password) {
       setError("Password is required");
     } else {
-      fetch("http://localhost:5000/user/login", {
+      fetch("https://final-project-idzh.onrender.com/user/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

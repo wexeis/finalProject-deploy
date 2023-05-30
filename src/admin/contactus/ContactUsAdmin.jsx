@@ -19,7 +19,7 @@ function ContactUsAdmin() {
   };
   const getUserData =()=>{
     axios
-      .get("http://localhost:5000/contactus")
+      .get("https://final-project-idzh.onrender.com/contactus")
       .then((response) => {
         setUserslist(response.data);
       })
@@ -31,7 +31,7 @@ function ContactUsAdmin() {
       });
   }
   const handleDeleteUser = async (id) => {
-    const url = `http://localhost:5000/contactus/${id}`;
+    const url = `https://final-project-idzh.onrender.com/contactus/${id}`;
     try {
       await axios.delete(url);
   getUserData();

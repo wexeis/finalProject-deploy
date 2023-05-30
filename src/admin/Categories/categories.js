@@ -12,7 +12,7 @@ function CategoriesAdmin() {
   // get categories using axios
   useEffect(() => {
     axios
-      .get("http://localhost:5000/category")
+      .get("https://final-project-idzh.onrender.com/category")
       .then((response) => {
         setCategories(response.data);
       })
@@ -46,7 +46,7 @@ function CategoriesAdmin() {
       headers: { "content-type": "application/json" },
     };
     axios
-      .post(`http://localhost:5000/category`, data, config)
+      .post(`https://final-project-idzh.onrender.com/category`, data, config)
       .then((response) => {
         setCategories([...categories, response.data]);
         
@@ -66,7 +66,7 @@ function CategoriesAdmin() {
   // Function for deleting  a product
 
   const handleDeleteCategory = async (id) => {
-    const url = `http://localhost:5000/category/${id}`;
+    const url = `https://final-project-idzh.onrender.com/category/${id}`;
     
     try {
       const confirmDelete = window.confirm("Are you sure you want to delete this category?");
@@ -94,7 +94,7 @@ function CategoriesAdmin() {
     };
     axios
       .patch(
-        `http://localhost:5000/category/${currentCategory._id}`,
+        `https://final-project-idzh.onrender.com/category/${currentCategory._id}`,
         updateCategory
       )
       .then(() => {

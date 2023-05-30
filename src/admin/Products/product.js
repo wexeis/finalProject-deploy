@@ -17,7 +17,7 @@ import './product.css';
     
     const getProducts = async () => {
       try {
-        const response = await fetch('http://localhost:5000/product');
+        const response = await fetch('https://final-project-idzh.onrender.com/product');
         if (response.ok) {
           const data = await response.json();
           setProducts(data);
@@ -31,7 +31,7 @@ import './product.css';
     
     const getCategories = async () => {
       try {
-        const response = await fetch('http://localhost:5000/category');
+        const response = await fetch('https://final-project-idzh.onrender.com/category');
         if (response.ok) {
           const data = await response.json();
           setCategories(data);
@@ -45,7 +45,7 @@ import './product.css';
     
     const handleDelete = async (productId) => {
       try {
-        const response = await fetch(`http://localhost:5000/product/${productId}`, {
+        const response = await fetch(`https://final-project-idzh.onrender.com/product/${productId}`, {
           method: 'DELETE',
         });
     
@@ -132,7 +132,7 @@ import './product.css';
       }
       
       try {
-        const response = await fetch(`http://localhost:5000/product/${productId}`, {
+        const response = await fetch(`https://final-project-idzh.onrender.com/product/${productId}`, {
           method: 'PATCH',
           body: formData,
         });

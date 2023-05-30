@@ -30,7 +30,7 @@ const ProfilePage = () => {
 
   useEffect(() => {
     const fetchOrders = async () => {
-      const res = await fetch(`https://localhost:5000/order/user/${UserId}`);
+      const res = await fetch(`https://final-project-idzh.onrender.com/order/user/${UserId}`);
       const data = await res.json();
       setOrders(data);
     };
@@ -39,7 +39,7 @@ const ProfilePage = () => {
 
   useEffect(() => {
     const fetchUser = async () => {
-      const res = await fetch(`https://localhost:5000/user/${UserId}`);
+      const res = await fetch(`https://final-project-idzh.onrender.com/user/${UserId}`);
       const data = await res.json() ;
 
  
@@ -53,7 +53,7 @@ const ProfilePage = () => {
   const initials = firstName.split(" ").map((name) => name[0]).join("").toUpperCase() + lastName.split(" ").map((name) => name[0]).join("").toUpperCase() 
 
   const handleSearch = async () => {
-    const res = await fetch(`https://localhost:5000/order/${searchOrder}`);
+    const res = await fetch(`https://final-project-idzh.onrender.com/order/${searchOrder}`);
     if (res.ok) {
       const data = await res.json();
       setOrderDetails(data);

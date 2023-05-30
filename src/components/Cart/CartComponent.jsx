@@ -35,7 +35,7 @@ export default function CartComponent() {
   };
   const handleCreatingCart = async (productId, productName, finalPrice) => {
     try {
-      const response = await fetch('http://localhost:5000/cart/ ', {
+      const response = await fetch('https://final-project-idzh.onrender.com/cart/ ', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

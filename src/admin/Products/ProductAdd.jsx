@@ -28,7 +28,7 @@ import "./productAdd.css"
         formData.append('productQuantity', productQuantity);
         formData.append('perscription', perscription);
         console.log(formData)
-        await axios.post('http://localhost:5000/product', formData , {
+        await axios.post('hhttps://final-project-idzh.onrender.com/product', formData , {
           headers: {
             'Content-Type': 'multipart/form-data',
           },

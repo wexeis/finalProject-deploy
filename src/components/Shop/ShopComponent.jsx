@@ -32,7 +32,7 @@ function ShopComponent() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('http://localhost:5000/category');
+        const response = await fetch('https://final-project-idzh.onrender.com/category');
         const jsonData = await response.json();
         setCat(jsonData);
       } catch (error) {

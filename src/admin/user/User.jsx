@@ -24,7 +24,7 @@ function UserAdmin() {
 
   const getUserData = () => {
     axios
-      .get("http://localhost:5000/user")
+      .get("https://final-project-idzh.onrender.com/user")
       .then((response) => {
         setUserslist(response.data);
       })
@@ -34,7 +34,7 @@ function UserAdmin() {
   };
 
   const handleDeleteUser = async (id) => {
-    const url = `http://localhost:5000/user/${id}`;
+    const url = `https://final-project-idzh.onrender.com/user/${id}`;
     try {
       await axios.delete(url);
       getUserData();
