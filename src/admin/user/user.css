@@ -1,0 +1,85 @@
+.user-admin {
+  width: 100%;
+  padding: 20px;
+}
+
+.user-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.page-name {
+  margin-bottom: 20px;
+}
+
+.title-page-dashboard {
+  font-size: 24px;
+  color: #333;
+}
+
+.table-container {
+  background-color: #fff;
+  border-radius: 4px;
+  padding: 20px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.search-table {
+  margin-bottom: 20px;
+}
+
+.search {
+  margin-bottom: 10px;
+}
+
+.search input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.user-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.head-table th {
+  padding: 12px;
+  background-color: #f2f2f2;
+  color: #333;
+  font-weight: bold;
+  text-align: left;
+}
+
+.table-tbody .table-tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.table-td {
+  padding: 12px;
+}
+
+.edit,
+.delete {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 0.3s;
+}
+
+.edit:hover,
+.delete:hover {
+  opacity: 1;
+}
+
+.delete {
+  margin-left: 10px;
+}
+
+.delete img {
+  filter: invert(44%) sepia(59%) saturate(485%) hue-rotate(213deg)
+    brightness(91%) contrast(86%);
+}

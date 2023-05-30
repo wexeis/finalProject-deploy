@@ -1,0 +1,33 @@
+.productForm-XY8S12 {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+  }
+  
+  .formTitle-AB7C45 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .formLabel-CDE345 {
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  .formInput-789D2E {
+    padding: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  .submitButton-789MNO {
+    padding: 10px 20px;
+    background-color: #f4511e;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .submitButton-789MNO:hover {
+    background-color: #e64a19;
+  }
+  

@@ -1,0 +1,493 @@
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+  grid-auto-rows: minmax(200px, auto);
+  align-items: center; 
+  margin-left: 20vh;
+  margin-right: 20vh;
+  height: 100vh;
+}
+.item{
+  height: 30vh;
+  border-radius: 40px;
+  margin-top: 2vh;
+  margin-bottom: 2vh;
+}
+
+.item1 {
+ 
+  grid-column: 1;
+  grid-row: span 2;
+}
+
+.item2 {
+
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.item3 {
+  grid-column: 2;
+  grid-row: 2;
+}
+
+.item4 {
+  grid-column: 3;
+  grid-row: span 2;
+}
+
+.parallax-container0{
+  margin-top: 20vh;
+  background-image: url("https://tereos.com/app/uploads/2018/06/cover-innovation-pharmacie-1920x751-c-default.jpg");
+
+  /* background-image: url("https://r4.wallpaperflare.com/wallpaper/512/431/614/pills-dinner-wallpaper-18e6eda890706c38a02c319e6872341a.jpg"); */
+  background-attachment: fixed;
+  height: 15vh;
+  background-repeat:round;
+  background-color: rgba(0, 0, 0, 0.5); 
+
+
+}
+
+
+.parallax-container {
+  background-image: url("https://tereos.com/app/uploads/2018/06/cover-innovation-pharmacie-1920x751-c-default.jpg");
+  background-attachment: fixed;
+  height: 15vh;
+  background-repeat:round;
+
+  }
+.homepage{
+  margin-top: 0vh;
+}
+img {
+  width: 100%;
+  height: auto;
+}
+
+.container-home {
+  
+  max-width: 88%;
+  margin: 0 auto;
+}
+
+.background {
+ 
+  background-color: rgb(210, 233, 238);
+padding-top: 5%;  /* background-color: rgb(247 ,244 ,172); */
+
+  /* background-color: #FFCC3F; */
+}
+
+.banner {
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.bold-text {
+  font-weight: bold;
+}
+.b-bottom {
+  border-bottom: 1px solid;
+}
+
+.w-75 {
+  width: 75%;
+  
+}
+
+.d-flex {
+  display: flex;
+}
+.d-flex-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.bigFont-3 {
+  font-size: 3rem;
+}
+.bigFont-1 {
+  font-size: 1.4rem;
+}
+
+.bigFont-2 {
+  font-size: 2rem;
+  flex-basis: 50%;
+}
+
+.left {
+  padding: 30px;
+}
+
+.imageRight {
+  mix-blend-mode: darken;
+  justify-content: end;
+  margin-left: auto;
+  width: 30vw;
+  height: 83.5vh;
+  object-fit: cover;
+}
+
+
+
+
+.m-top {
+  margin-top: 10px;
+  margin-left: 1.5vw;
+  width: 35vw;
+}
+
+.m-bottom {
+  margin-bottom: 10px;
+}
+/* CSS */
+.button-7 {
+  background-color: #0095ff;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  box-shadow: rgba(255, 255, 255, 0.4) 0 1px 0 0 inset;
+  box-sizing: border-box;
+  color: black;
+  cursor: pointer;
+  display: inline-block;
+  font-family: -apple-system, system-ui, "Segoe UI", "Liberation Sans",
+    sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.15385;
+  margin: 0;
+  outline: none;
+  padding: 8px 0.8em;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+  white-space: nowrap;
+}
+
+.button-7:hover,
+.button-7:focus {
+  background-color: #07c;
+}
+
+.button-7:focus {
+  box-shadow: 0 0 0 4px rgba(0, 149, 255, 0.15);
+}
+
+.button-7:active {
+  background-color: #0064bd;
+  box-shadow: none;
+}
+.flex-r {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.flex-50 {
+  flex-basis: 50%;
+}
+
+.left {
+  padding: 30px;
+}
+
+
+
+
+
+.start-home{
+margin-top: 5%;
+display: flex;
+justify-content: center;
+align-items: center;
+height: 53.5vh;
+
+}
+.start-home div{
+width: 20%;
+
+}
+
+.cat1 .cat3{
+max-height: 40vh;
+}
+
+.cat2{
+display: flex;
+flex-direction: column;
+margin-right: 2.5%;
+margin-left: 2.5%;
+
+}
+.cat2 img{
+margin-bottom: 10%;
+max-height: 30vh;
+
+
+
+
+}
+.start-home img{
+border-radius: 30px;
+}
+.cat1 img{
+height: 30vh ;
+}
+
+.cat3 img{
+height: 30vh ;
+}
+
+
+.hover-effect {
+transition: transform 0.3s ease;
+}
+
+.hover-effect:hover {
+transform: scale(1.1);
+}
+
+
+
+.product-card {
+  margin-right: 0.5vw;
+  margin-top: 7vh;
+display: flex;
+flex-direction: column;
+row-gap: 16px;
+width: 280px;
+background-color: #fff;
+padding: 10px;
+border-radius: 8px;
+overflow-y: hidden;
+}
+.product-card__image {
+display: block;
+max-width: 100%;
+animation: fadeIn 0.25s;
+height: 30vh;
+}
+.product-card__caption {
+display: flex;
+flex-direction: column;
+gap: 10px;
+background-color:rgb(210, 233, 238);
+font-size: 14px;
+letter-spacing: 1px;
+padding: 20px;
+border-radius: inherit;
+animation: fadeIn 0.5s;
+}
+.product-card__title {
+font-size: 18px;
+text-transform: uppercase;
+}
+/* .product-card__subtitle {
+} */
+.product-card__footer {
+display: flex;
+align-items: center;
+justify-content: space-between;
+}
+.product-card__price {
+font-weight: 600;
+}
+.product-card__button {
+display: grid;
+place-items: center;
+width: 30px;
+height: 30px;
+background-color: #03d7c9;
+color: black;
+outline: none;
+border: none;
+border-radius: 50%;
+cursor: pointer;
+transition: background-color 0.25s;
+}
+.product-card__button:hover,
+.product-card__button:focus {
+background-color: #01bdb0;
+}
+.product-card__icon {
+font-size: 18px;
+transition: transform 0.25s;
+}
+.product-card__button:hover .product-card__icon,
+.product-card__button:focus .product-card__icon {
+transform: rotate(1turn);
+}
+@keyframes fadeIn {
+from {
+  opacity: 0;
+  transform: translateY(50px);
+}
+to {
+  opacity: 1;
+  transform: translateY(0);
+}
+}
+
+.products{
+display: flex;
+flex-direction: row;
+justify-content: center;
+}
+
+
+.skin-care {
+margin-top: 0vh;
+height: 10vh;
+font-size: 2rem;
+background-color: rgb(210, 233, 238);
+display: flex;
+justify-content: center;
+align-items: center;
+}
+.otc {
+height: 12vh;
+font-size: 2rem;
+background-color: rgb(210, 233, 238);
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+
+
+
+@media all and (max-width: 1337px) {
+  .fixing {
+    overflow: scroll;
+    display: flex;
+    scroll-snap-type: x mandatory;
+    gap: 2%;
+  }
+
+  .card {
+    flex-shrink: 0;
+    width: 50%;
+  }
+
+  .banner {
+    text-align: center;
+    flex-direction: column;
+  }
+
+  .flex-r {
+    justify-content: center;
+  }
+}
+
+@media all and (max-width: 550px) {
+  .banner{
+    margin-top: 10vh;
+  }
+  .imageRight{
+    width: 87vw;
+    height: 70vh;
+  }
+  
+  .card {
+    flex-shrink: 0;
+    width: 100%;
+    scroll-snap-align: center;
+  }
+  .start-home{
+    /* display: none; */
+    width: 30%;
+  }
+  .product-card {
+    display: flex;
+    flex-direction: column;
+    row-gap: 16px;
+    width: 280px;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 8px;
+    overflow-y: hidden;
+
+  }
+  .parallax-container, .parallax-container0{
+    display: none;
+  }
+
+  .m-top {
+    margin-left: 20vw;
+    ;
+  }
+/*   
+  .product-card__image {
+    display: block;
+    width: 100%;
+    height: 53vh;
+    object-fit: cover;
+    animation: fadeIn 0.25s;
+  } */
+  
+  .product-card__caption {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: rgb(210, 233, 238);
+    font-size: 14px;
+    letter-spacing: 1px;
+    padding: 20px;
+    border-radius: inherit;
+    animation: fadeIn 0.5s;
+  }
+  
+  .product-card__title {
+    font-size: 18px;
+    text-transform: uppercase;
+  }
+  
+  .product-card__footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .products {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center;
+  }
+  .skin-care{
+    display: none;
+  }
+  .start-home{
+    display: none;
+  }
+  .grid-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .item1,
+  .item2,
+  .item3,
+  .item4 {
+    height: auto;
+    width: auto;
+
+  }
+}
+
+
+
+
+.fixing {
+  gap: 2%;
+}
+
+

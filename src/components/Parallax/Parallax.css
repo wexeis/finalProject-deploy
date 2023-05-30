@@ -1,0 +1,13 @@
+.parallax-container {
+    height: 500px; /* Adjust the height as needed */
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+  
+  .parallax-layer {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: transparent; /* Set the background color */
+    /* Add any other styles you want for the layers */
+  }
