@@ -1,33 +1,61 @@
 .productForm-XY8S12 {
-    margin: 20px;
-    padding: 20px;
-    border: 1px solid #ccc;
-  }
-  
-  .formTitle-AB7C45 {
-    font-size: 24px;
-    margin-bottom: 20px;
-  }
-  
-  .formLabel-CDE345 {
-    display: block;
-    margin-bottom: 10px;
-  }
-  
-  .formInput-789D2E {
-    padding: 5px;
-    border: 1px solid #ccc;
-  }
-  
-  .submitButton-789MNO {
-    padding: 10px 20px;
-    background-color: #f4511e;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-  }
-  
-  .submitButton-789MNO:hover {
-    background-color: #e64a19;
-  }
-  
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f5f5f5;
+  border-radius: 5px;
+  margin-top: 0vh;
+}
+
+.formTitle-AB7C45 {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.formLabel-CDE345,
+.formLabel-FG6H12,
+.formLabel-MNOP56,
+.formLabel-UVWX90,
+.formLabel-567ABC,
+.formLabel-GHIJKL,
+.formLabel-STUVWX,
+.formLabel-567DEF,
+.formLabel-RSTUVW {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 16px;
+}
+
+.formInput-789D2E,
+.formInput-IJKL34,
+.formInput-QRST78,
+.formInput-YZ1234,
+.formInput-DEF789,
+.formInput-MNOPQR,
+.formInput-XYZ123 {
+  width: 100%;
+  padding: 8px;
+  font-size: 14px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.submitButton-789MNO {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  font-size: 16px;
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.submitButton-789MNO:hover {
+  background-color: #45a049;
+}
+
+/* Additional CSS styles can be added here for other elements */

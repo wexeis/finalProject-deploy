@@ -150,16 +150,16 @@ function Navbar({ onButtonClick }) {
             location.pathname === "/user" ? " lol" : ""
           }`}
           to="/user"
-        >Hello, {firstName} 
+        > 
         </Link>
         <p onClick={logOut} className={active ? "user-b" : "user"}>
-            <i className="ri-user-fill"></i>Logout
+        <b>Logout</b>
           </p>
         </h2>
         ) : (
-          <a href="/login">
+          <Link to="/login">
             <i className="ri-user-fill"></i>Sign-in
-          </a>
+          </Link>
         )}
         <div className={icon} id="menu-icon" onClick={toggle}></div>
       </div>

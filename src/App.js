@@ -70,7 +70,7 @@ function App() {
             <Route path="/categories" element={<CategoriesAdmin />} />
             <Route path="/products" element={<ProductsAdmin />} />
             <Route path="/popularCardAdmin" element={<PopularCardAdmin />} />
-            <Route path= "/productadd" element={<ProductsAdd />} />
+            <Route path= "/addproducts" element={<ProductsAdd />} />
             {/* <Route path="/imagesC" element={<ImageCarousleAdmin />} /> */}
             <Route exact path="/adminorders" element={<DashboadOrders />} />
             <Route exact path="/adminuser" element={<UserAdmin />} />

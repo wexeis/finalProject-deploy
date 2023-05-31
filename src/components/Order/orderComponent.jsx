@@ -69,9 +69,10 @@ export default function Order() {
       }),
     };
     fetch(`https://final-project-idzh.onrender.com/order/`, requestOptions)
+    // fetch(`http://localhost:5000/order/`, requestOptions)
       .then((response) => {
         if (response.status === 200) {
-          console.log('Order confirmed!');
+          console.log('Order confirmed!', response);
           setCart({ userId: '', products: [] })
 // navigate('/user')
         } else {

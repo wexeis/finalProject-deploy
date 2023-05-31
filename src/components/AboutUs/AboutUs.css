@@ -35,10 +35,11 @@ margin-top: 10vh;
 
 .about-img {
   position: relative;
-  background-image: url("https://c7.alamy.com/comp/ER5079/nut-and-spice-wholesale-shop-dubai-spice-souk-dubai-city-united-arab-ER5079.jpg");
+  background-image: url("about-imghttps://frogmi.com/wp-content/uploads/2021/08/retail-farmaceutico.jpg");
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center center;
+  margin-top: 10vh;
   height: 600px;
   width: 100%;
 }
@@ -154,6 +155,12 @@ margin-top: 10vh;
 }
 
 @media screen and (max-width: 768px) {
+  .content h2{
+margin-right:2rem;
+}
+  .about-img{
+    display: none;
+  }
   .row {
   margin-top: 5vh}
 

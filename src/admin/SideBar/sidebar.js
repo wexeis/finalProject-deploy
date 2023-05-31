@@ -76,8 +76,11 @@ const MainLayout = () => {
                 },
 
               
-               
-   
+           {
+            key: 'addProducts',
+            icon: <AiOutlineShoppingCart className="fs-4" />,
+            label: "Add Products"
+           },
                 {
                   key: "categories",
                   icon: <BiCategoryAlt className="fs-4" />,

@@ -14,7 +14,9 @@ const About = () => {
       <section className="about">
         <div className="row">
           <div className="column">
-            {/* <div className="about-img"></div> */}
+              <div className="about-img">
+                <img src="https://frogmi.com/wp-content/uploads/2021/08/retail-farmaceutico.jpg" />
+              </div>
           </div>
           <div className="column">
             <div className="tabs">
@@ -38,7 +40,7 @@ const About = () => {
             </div>
             <div className="tab-content">
               <div className={toggleTab === 1 ? "content active-content" :"content"}>
-                <h2>Our Story</h2>
+                <h2 className="h2-about">Our Story So Far</h2>
                 <p className="story-p">
                   Lorem, ipsum dolor sit amet consectetur adipisicing elit.
                   Voluptatibus neque sapiente explicabo? Molestiae,

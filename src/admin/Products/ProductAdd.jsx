@@ -2,55 +2,61 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import "./productAdd.css"
 
-  function ProductsAdd() {
-    const [productName, setProductName] = useState('');
-    const [dosage, setDosage] = useState('');
-    const [productImage, setProductImage] = useState(null);
-    const [categoryId, setCategoryId] = useState('');
-    const [sale, setSale] = useState('');
-    const [productPrice, setProductPrice] = useState('');
-    const [productQuantity, setProductQuantity] = useState('');
-    const [perscription, setPerscription] = useState('');
-  
-    const handleImageSelect = (e) => {
-      setProductImage(e.target.files[0]);
-    };
-  
-    const handleAddProduct = async () => {
-      try {
-        const formData = new FormData();
-        formData.append('productName', productName);
-        formData.append('dosage', dosage);
-        formData.append('file', productImage);
-        formData.append('categoryId', categoryId);
-        formData.append('sale', sale);
-        formData.append('productPrice', productPrice);
-        formData.append('productQuantity', productQuantity);
-        formData.append('perscription', perscription);
-        console.log(formData)
-        await axios.post('hhttps://final-project-idzh.onrender.com/product', formData , {
+function ProductsAdd() {
+  const [productName, setProductName] = useState('');
+  const [dosage, setDosage] = useState('');
+  const [productImage, setProductImage] = useState(null);
+  const [categoryId, setCategoryId] = useState('');
+  const [sale, setSale] = useState('');
+  const [productPrice, setProductPrice] = useState('');
+  const [productQuantity, setProductQuantity] = useState('');
+  const [perscription, setPerscription] = useState('');
+  const [productDescription, setProductDescription] = useState('');
+
+  const handleImageSelect = (e) => {
+    setProductImage(e.target.files[0]);
+  };
+
+  const handleAddProduct = async () => {
+    try {
+      const formData = new FormData();
+      formData.append('productName', productName);
+      formData.append('dosage', dosage);
+      formData.append('file', productImage);
+      formData.append('categoryId', categoryId);
+      formData.append('sale', sale);
+      formData.append('productPrice', productPrice);
+      formData.append('productQuantity', productQuantity);
+      formData.append('perscription', perscription);
+      formData.append('productDescription', productDescription);
+
+      await axios.post('https://final-project-idzh.onrender.com/product', 
+      // await axios.post('http://localhost:5000/product',
+        formData, {
           headers: {
             'Content-Type': 'multipart/form-data',
           },
-          
         });
-        console.log('Product added successfully');
-        // Reset the form fields
-        setProductName('');
-        setDosage('');
-        setProductImage(null);
-        setCategoryId('');
-        setSale('');
-        setProductPrice('');
-        setProductQuantity('');
-        setPerscription('');
-      } catch (error) {
-        console.error('Error adding product:', error);
-      }
-    };
-  
-    return (
-      <div className="productForm-XY8S12">
+      
+      console.log('Product added successfully');
+      // Reset the form fields
+      setProductName('');
+      setDosage('');
+      setProductImage(null);
+      setCategoryId('');
+      setSale('');
+      setProductPrice('');
+      setProductQuantity('');
+      setPerscription('');
+      setProductDescription('');
+    } catch (error) {
+      console.error('Error adding product:', error);
+      console.error('Error adding product:', error.response.data);
+    }
+  };
+
+  return (
+    <div className="productForm-XY8S12">
       <h1 className="formTitle-AB7C45">Add Product</h1>
       <label className="formLabel-CDE345">
         Product Name:
@@ -92,10 +98,17 @@ import "./productAdd.css"
         <input className="formInput-GHIJKL" type="text" value={perscription} onChange={(e) => setPerscription(e.target.value)} />
       </label>
       <br />
+      <label className="formLabel-RSTUVW">
+        Product Description:
+        <input className="formInput-XYZ123" type="text" value={productDescription} onChange={(e) => setProductDescription(e.target.value)} />
+      </label>
+      <br />
       <button className="submitButton-789MNO" onClick={handleAddProduct}>Add Product</button>
     </div>
-    
-    );
-  }
-  
+  );
+}
+
 export default ProductsAdd;
+
+
+

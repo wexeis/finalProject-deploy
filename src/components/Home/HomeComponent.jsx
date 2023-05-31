@@ -2,18 +2,31 @@ import React, {useContext, useState, useEffect} from "react";
 
 import "./homeComp.css";
 import ProductContext from "../Home/ProductContext";
-
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 
 
 export default function Home() {
   const {product} = useContext(ProductContext)
+    const [currentIndex1, setCurrentIndex1] = useState(0);
+	const [currentIndex2, setCurrentIndex2] = useState(0);
+
+	const [currentIndex3, setCurrentIndex3] = useState(0);
+	const [currentIndex4, setCurrentIndex4] = useState(0);
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   console.log(product)
 
   const otc = product.filter((item)=> item.categoryId == "64601589b7503cfd2a1fc405")
+  const skinCare = product.filter((item)=> item.categoryId=="646017a4d6c25af8e2a6ac49")
+
   console.log("hello")
+  console.log(skinCare)
   console.log(otc)
 
   useEffect(() => {
@@ -21,13 +34,20 @@ export default function Home() {
       setCurrentImageIndex((prevIndex) =>
         (prevIndex + 1) % product.length
       );
-    }, 4000);
+    }, 1000);
 
     return () => {
       clearInterval(interval);
     };
   }, [product.length]);
-console.log(currentImageIndex)
+
+
+  const [imageIndices, setImageIndices] = useState([]);
+
+
+
+
+
 
 
 //   const productImages = product.map((item) => item.productImage);
@@ -64,84 +84,70 @@ console.log(currentImageIndex)
 </div>
       </div>
 	  <h2 className="skin-care">Skin Care</h2>
-    
-	 <div className="grid-container">
-	    <img src="https://i0.wp.com/www.pharmaholic.net/wp-content/uploads/2022/02/aqua_therapy_-_web_mobile_banner_final_0_0.jpg?fit=640%2C450&ssl=10"    className="hover-effect item item1"/>
-		<img src="https://i0.wp.com/www.pharmaholic.net/wp-content/uploads/2022/02/filorga_ncef_reverse_reg_supreme_regenerating_cream_50ml_130035_1614092771_main.jpg?fit=400%2C400&ssl=1"  className="hover-effect item item2" />
-    <img src="https://blogscdn.thehut.net/wp-content/uploads/sites/31/2018/05/22150126/Hydrabio-range-lifestyle.jpg" className="hover-effect item item3" />
-	<img src="https://i2.wp.com/www.pharmaholic.net/wp-content/uploads/2022/02/5bc0a240e79e0_banner_kit-1.jpg?fit=995%2C569&ssl=1" class="hover-effect item item4"/>
 
-	</div>
+    {/* <Slider {...settings}>
+    {skinCare.map((product, index) => (
+        <div key={index}>
+          <h3>{product}</h3>
+        </div>
+      ))}
+    </Slider> */}
+	  {/* <div className="grid-container">
+      {imageIndices.map((index, i) => (
+        <img
+          key={i}
+          src={skinCare[index]?.productImage}
+          alt={`Product ${index}`}
+          className={`hover-effect item item${i + 1}`}
+        />
+      ))}
+    </div> */}
+
+<div className="products-show">
+      {skinCare.map((product) => (
+        <figure className="product-card" key={product._id}>
+          <img src={product.productImage} alt={product.productName} className="product-card__image" />
+          <figcaption className="product-card__caption">
+            <header className="product-card__header">
+              <h2 className="product-card__title">{product.productName}</h2>
+              <p className="product-card__subtitle">{product.dosage}</p>
+            </header>
+            <footer className="product-card__footer">
+              <span className="product-card__price">$19.99</span>
+              {/* <button className="product-card__button">
+                <i className="product-card__icon ri-add-line"></i>
+              </button> */}
+            </footer>
+          </figcaption>
+        </figure>
+      ))}
+    </div>
    
 	<div class="parallax-container">
 </div>
 <h2 className="otc">OTC</h2>
-    <div className="products">
-		<figure class="product-card">
-			<img src="https://m.media-amazon.com/images/I/71I5Wqo7eZL._AC_SX679_.jpg" alt="Face mask" class="product-card__image" />
-			<figcaption class="product-card__caption">
-				<header class="product-card__header">
-					<h2 class="product-card__title">Face mask</h2>
-					<p class="product-card__subtitle">Charcoal</p>
-				</header>
-				<footer className="product-card__footer">
-					<span className="product-card__price">$19.99</span>
-					<button class="product-card__button">
-						<i class="product-card__icon ri-add-line"></i>
-					</button>
-				</footer>
-			</figcaption>
-		</figure>
-
-    <figure class="product-card">
-			<img src="https://m.media-amazon.com/images/I/818VNiJEWqL._AC_SX679_.jpg" alt="Face mask" class="product-card__image" />
-			<figcaption className="product-card__caption">
-				<header className="product-card__header">
-					<h2 className="product-card__title">Face mask</h2>
-					<p className="product-card__subtitle">Charcoal</p>
-				</header>
-				<footer className="product-card__footer">
-					<span className="product-card__price">$19.99</span>
-					<button className="product-card__button">
-						<i className="product-card__icon ri-add-line"></i>
-					</button>
-				</footer>
-			</figcaption>
-		</figure>
-
-    <figure class="product-card">
-			<img src="https://m.media-amazon.com/images/I/71sFyWwZ3SL._AC_SX466_.jpg" alt="Face mask" class="product-card__image" />
-			<figcaption className="product-card__caption">
-				<header className="product-card__header">
-					<h2 className="product-card__title">Face mask</h2>
-					<p className="product-card__subtitle">Charcoal</p>
-				</header>
-				<footer className="product-card__footer">
-					<span className="product-card__price">$19.99</span>
-					<button className="product-card__button">
-						<i className="product-card__icon ri-add-line"></i>
-					</button>
-				</footer>
-			</figcaption>
-		</figure>
-
-    <figure class="product-card">
-			<img src="https://m.media-amazon.com/images/I/81eobl+tIRS._AC_SX679_.jpg" alt="Face mask" class="product-card__image" />
-			<figcaption className="product-card__caption">
-				<header className="product-card__header">
-					<h2 className="product-card__title">Face mask</h2>
-					<p className="product-card__subtitle">Charcoal</p>
-				</header>
-				<footer className="product-card__footer">
-					<span className="product-card__price">$19.99</span>
-					<button className="product-card__button">
-						<i className="product-card__icon ri-add-line"></i>
-					</button>
-				</footer>
-			</figcaption>
-		</figure>
-
+<div className="products-show">
+      {otc.map((product) => (
+        <figure className="product-card" key={product._id}>
+          <img src={product.productImage} alt={product.productName} className="product-card__image" />
+          <figcaption className="product-card__caption">
+            <header className="product-card__header">
+              <h2 className="product-card__title">{product.productName}</h2>
+              <p className="product-card__subtitle">{product.dosage}</p>
+            </header>
+            <footer className="product-card__footer">
+              <span className="product-card__price">$19.99</span>
+              {/* <button className="product-card__button">
+                <i className="product-card__icon ri-add-line"></i>
+              </button> */}
+            </footer>
+          </figcaption>
+        </figure>
+      ))}
     </div>
+        
+              
+
     </div>
   );
 }
