@@ -404,6 +404,10 @@ justify-content: center;
 
 
 @media all and (max-width: 1337px) {
+  .products-show{
+    display: flex;
+    flex-direction: column;
+  }
   .fixing {
     overflow: scroll;
     display: flex;
@@ -427,6 +431,8 @@ justify-content: center;
 }
 
 @media all and (max-width: 550px) {
+
+
   .banner{
     margin-top: 10vh;
   }
