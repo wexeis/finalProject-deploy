@@ -7,7 +7,6 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 
-
 export default function Home() {
   const {product} = useContext(ProductContext)
     const [currentIndex1, setCurrentIndex1] = useState(0);
@@ -45,7 +44,40 @@ export default function Home() {
   const [imageIndices, setImageIndices] = useState([]);
 
 
-
+const settings = {
+  dots: true,
+  infinite: true,
+  speed: 500,
+  slidesToShow: 5,
+  slidesToScroll: 4,
+  initialSlide: 1,
+  responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 2,
+        infinite: true,
+        dots: true
+      }
+    },
+    {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 2,
+        initialSlide: 2
+      }
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1
+      }
+    }
+  ]
+};
 
 
 
@@ -103,7 +135,7 @@ export default function Home() {
       ))}
     </div> */}
 
-<div className="products-show">
+{/* <div className="products-show">
       {skinCare.map((product) => (
         <figure className="product-card" key={product._id}>
           <img src={product.productImage} alt={product.productName} className="product-card__image" />
@@ -114,19 +146,36 @@ export default function Home() {
             </header>
             <footer className="product-card__footer">
               <span className="product-card__price">$19.99</span>
-              {/* <button className="product-card__button">
-                <i className="product-card__icon ri-add-line"></i>
-              </button> */}
+              
             </footer>
           </figcaption>
         </figure>
       ))}
-    </div>
+    </div> */}
+
+<div className="app">
+        <Slider {...settings}>
+        {skinCare.map((item)=> (
+        <div className="card">
+              <div className="card-top">
+                <img src={item.productImage}  onClick={() => window.location.pathname = "/shop"}/>
+                <h1><b>{item.productName}</b></ h1  >
+              </div>
+              <div className="card-bottom">
+                <h1><b>{item.finalPrice} $</b></h1>
+              </div>
+              
+        </div>
+        
+        ))}
+        </Slider>
+
+</div>
    
 	<div class="parallax-container">
 </div>
 <h2 className="otc">OTC</h2>
-<div className="products-show">
+{/* <div className="products-show">
       {otc.map((product) => (
         <figure className="product-card" key={product._id}>
           <img src={product.productImage} alt={product.productName} className="product-card__image" />
@@ -137,17 +186,31 @@ export default function Home() {
             </header>
             <footer className="product-card__footer">
               <span className="product-card__price">$19.99</span>
-              {/* <button className="product-card__button">
-                <i className="product-card__icon ri-add-line"></i>
-              </button> */}
+             
             </footer>
           </figcaption>
         </figure>
       ))}
-    </div>
-        
-              
+          </div> */}
 
-    </div>
+      <div className="app">
+        <Slider {...settings}>
+        {otc.map((item)=> (
+        <div className="card">
+              <div className="card-top">
+                <img src={item.productImage}   onClick={() => window.location.pathname = "/shop"} />
+                <h1><b>{item.productName}</b></ h1  >
+              </div>
+              <div className="card-bottom">
+                <h1><b>{item.finalPrice} $</b></h1>
+              </div>
+              
+        </div>
+        
+        ))}
+        </Slider>
+
+</div>
+</div>
   );
 }

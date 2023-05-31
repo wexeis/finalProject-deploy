@@ -24,10 +24,10 @@ const ContactUsComponent = (props) => {
     e.preventDefault();
     try {
       await emailjs.sendForm(
-        "service_x11nz0r",
-        "template_r8t4mxk",
+        "service_coce8xl",
+        "template_5bzux3c",
         form.current,
-        "-G-4mQwUEY5HmF9QG"
+        "vc73VhKacIqDN15XG"
       );
 
       // console.log("email sent successfully");

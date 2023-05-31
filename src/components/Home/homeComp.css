@@ -1,7 +1,17 @@
+body {
+  overflow-x: hidden;
+}
+.app{
+  margin-bottom: 4vh;
+}
 .products-show{
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.card-top img{
+  width: 40 vw;
+  height: 35vh
 }
 
 .grid-container {
@@ -109,8 +119,7 @@ img {
 }
 
 .container-home {
-  
-  max-width: 88%;
+  width: 100%;
   margin: 0 auto;
 }
 
@@ -427,12 +436,15 @@ justify-content: center;
 
   .flex-r {
     justify-content: center;
+    width: 100%;
   }
 }
 
 @media all and (max-width: 550px) {
 
-
+.app{
+  margin-bottom: 4vh;
+}
   .banner{
     margin-top: 10vh;
   }
