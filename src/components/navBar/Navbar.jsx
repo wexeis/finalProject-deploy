@@ -60,19 +60,19 @@ function Navbar({ onButtonClick }) {
 
 
   const logOut = () => {
-    window.location.href = "/";
+    window.location.pathname = "/";
 
     window.localStorage.clear();
   };
 
   return (
     <header className={`hello ${active ? "active" : "sticky-header"}`}>
-      <a href="/" className="logo">
+      <Link to="/" className="logo">
         <span>
           {" "}
           <img src="#" alt="wlogo" className="header-logo" />
         </span>
-      </a>
+      </Link>
       <ul className={menu}>
         <li className="li">
           {" "}

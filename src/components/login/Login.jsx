@@ -61,10 +61,10 @@ function Login({cancel}) {
 
           window.localStorage.setItem("loggedIn", true);
           if(localStorage.getItem('Role')==='admin')
-          {window.location.href = "/dashboard";}
+          {window.location.pathname = "/dashboard";}
           else
           if(localStorage.getItem('Role')==='user')
-          {window.location.href = "/";}
+          {window.location.pathname = "/";}
         })
         .catch((err) => {
           toast.error('Invalid email or password !');
