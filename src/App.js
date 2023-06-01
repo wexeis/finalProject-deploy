@@ -1,6 +1,8 @@
 import "./App.css";
 import { Route, Routes, BrowserRouter } from "react-router-dom";
 import { useState, useEffect } from "react";
+import { Helmet } from 'react-helmet';
+
 import Home from "./pages/Home";
 import Navbar from "./components/navBar/Navbar";
 import ContactUs from "./pages/ContactUs";
@@ -64,6 +66,7 @@ function App() {
 
       <>
         <Routes>
+
           <Route element={<AdminLayout />}>
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/orders" element={<Orders />} />
@@ -81,6 +84,7 @@ function App() {
 
       <div className={showPopUp ? "none" : "main-wrap"}>
         {/* <ProductContext> */}
+        
         <CartProvider> 
           <ProductProvider>
           <Routes>
@@ -94,6 +98,7 @@ function App() {
               <Route exact path="/order" element={<Order />} />
               <Route exact path="/login" element={<LoginP />} />
             </Route>
+
           </Routes>
           </ProductProvider>
         </CartProvider>
