@@ -9,10 +9,6 @@ body {
   align-items: center;
   justify-content: center;
 }
-.card-top img{
-  width: 40 vw;
-  height: 35vh
-}
 
 .grid-container {
   display: grid;
@@ -247,17 +243,20 @@ padding-top: 5%;  /* background-color: rgb(247 ,244 ,172); */
   padding: 30px;
 }
 
-
-.card-top img{
-  width: 70%  ;
-  ;
-}
 .car-top{
   display: flex;
   align-items: center;
   justify-content: center;
   
 }
+
+
+.card-top img{
+  width: 60%  ;
+  height: 30vh;
+  margin-bottom: 7%;
+}
+
 
 
 .start-home{
