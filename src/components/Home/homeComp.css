@@ -248,7 +248,16 @@ padding-top: 5%;  /* background-color: rgb(247 ,244 ,172); */
 }
 
 
-
+.card-top img{
+  width: 70%  ;
+  ;
+}
+.car-top{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
 
 
 .start-home{
