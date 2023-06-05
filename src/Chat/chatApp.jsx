@@ -2,6 +2,7 @@ import "./chatApp.css";
 import io from "socket.io-client";
 import { useState } from "react";
 import Chat from "./Chat";
+import emailjs from "@emailjs/browser";
 
 const socket = io.connect("https://chat-app-be-ok82.onrender.com");
 
@@ -14,7 +15,30 @@ function ChatApp() {
     if (username !== "" && room !== "") {
       socket.emit("join_room", room);
       setShowChat(true);
+      sendEmail(username, room); // Send email when joining the room
     }
+  };
+
+  const sendEmail = (username, room) => {
+    emailjs
+      .send(
+        "service_coce8xl",
+        "template_5bzux3c",
+        {
+          to_name: "Recipient Name",
+          from_name: "Your Name",
+          message: `${username} has joined the room ${room}`,
+        },
+        "vc73VhKacIqDN15XG"
+      )
+      .then(
+        (response) => {
+          console.log("Email sent successfully!", response.status, response.text);
+        },
+        (error) => {
+          console.error("Error sending email:", error);
+        }
+      );
   };
 
   return (
@@ -31,12 +55,12 @@ function ChatApp() {
           />
           <input
             type="text"
-            placeholder="Room ID..."
+            placeholder="subject..."
             onChange={(event) => {
               setRoom(event.target.value);
             }}
           />
-          <button onClick={joinRoom}>Join A Room</button>
+          <button onClick={joinRoom}>Join </button>
         </div>
       ) : (
         <Chat socket={socket} username={username} room={room} />

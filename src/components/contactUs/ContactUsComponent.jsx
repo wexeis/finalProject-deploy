@@ -19,6 +19,7 @@ const ContactUsComponent = (props) => {
   const onChange = (e) => {
     setmyData({ ...myData, [e.target.name]: e.target.value });
   };
+  console.log(myData)
 
   const sendEmail = async (e) => {
     e.preventDefault();
@@ -38,6 +39,7 @@ const ContactUsComponent = (props) => {
   };
 
   const onSubmit = async (e) => {
+    
     e.preventDefault();
     if (!email) {
       setError("Email is required");
@@ -49,19 +51,42 @@ const ContactUsComponent = (props) => {
       email: email,
       Message: Message,
     };
+    console.log(newContact)
     await sendEmail(e);
 
-    try {
-      await axios.post("https://final-project-idzh.onrender.com/contactus/", newContact);
-      setmyData({
-        fullName: "",
-        email: "",
-        Message: "",
-      });
-    } catch (err) {
-      console.log("error", err.response.data);
+  //   try {
+  //     // await axios.post("https://final-project-idzh.onrender.com/contactus/", newContact);
+  //     await axios.post("http://localhost:5000/contactus/", newContact);
+
+  //     setmyData({
+  //       fullName: "",
+  //       email: "",
+  //       Message: "",
+  //     });
+  //   } catch (err) {
+  //     console.log("error", err.response.data);
+  //   }
+  // };
+  // fetch("https://final-project-idzh.onrender.com/contactus/", {
+    fetch("http://localhost:5000/contactus/", {
+
+
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+  },
+  body: JSON.stringify(newContact),
+})
+  .then((response) => {
+    if (response.ok) {
+      console.log("Contact form submitted successfully!");
+    } else {
+      throw new Error("Failed to submit contact form");
     }
-  };
+  })
+  .catch((error) => {
+    console.error("Error submitting contact form:", error);
+  });}
 
   return (
     <>

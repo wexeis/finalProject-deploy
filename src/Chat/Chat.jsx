@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from "react";
 import ScrollableFeed from 'react-scrollable-feed'
+import emailjs from "@emailjs/browser";
+
+
 
 import './chat.css'
 

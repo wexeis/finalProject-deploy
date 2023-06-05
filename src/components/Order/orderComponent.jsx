@@ -52,44 +52,45 @@ export default function Order() {
     setShippingAddress(event.target.value);
   };
 
-  const handleConfirmOrder = () => {
-    if (!phoneNumber || !shippingAddress) {
-      alert('Please enter both phone number and shipping address.');
-      return;}
-    const userId = UserId;
-    const requestOptions = {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        userId,
-        phoneNumber,
-        shippingAddress,
-      }),
+    const handleConfirmOrder = () => {
+      if (!phoneNumber || !shippingAddress) {
+        alert('Please enter both phone number and shipping address.');
+        return;}
+      const userId = UserId;
+      const requestOptions = {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          userId,
+          phoneNumber,
+          shippingAddress,
+        }),
+      };
+        // fetch(`https://final-project-idzh.onrender.com/order/`, requestOptions)
+      fetch(`http://localhost:5000/order/`, requestOptions)
+        .then((response) => {
+          if (response.status === 200) {
+            console.log('Order confirmed!');
+            console.log(response)
+            setCart({ userId: '', products: [] })
+  // navigate('/user')
+          } else {
+            console.log('Error confirming order:', response.status);
+          }
+          // console.log(requestOptions);
+        })
+        .catch((error) => {
+          console.log('Error confirming order:', error);
+        });
     };
-      fetch(`https://final-project-idzh.onrender.com/order/`, requestOptions)
-    // fetch(`http://localhost:5000/order/`, requestOptions)
-      .then((response) => {
-        if (response.status === 200) {
-          console.log('Order confirmed!', response);
-          setCart({ userId: '', products: [] })
-// navigate('/user')
-        } else {
-          console.log('Error confirming order:', response.status);
-        }
-        // console.log(requestOptions);
-      })
-      .catch((error) => {
-        console.log('Error confirming order:', error);
-      });
-  };
 
-  const handleCancelOrder = () => {
-    
-          setCart({ userId: '', products: [] })
+    const handleCancelOrder = () => {
+      
+            setCart({ userId: '', products: [] })
 
-  };
+    };
 
 
   // const calculateTotal = () => {

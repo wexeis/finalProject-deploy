@@ -5,6 +5,7 @@ import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import "@fortawesome/fontawesome-free/css/all.css";
 import CartContext from "../Cart/CartContext";
 import ProductPopup from "./ProductPopup";
+import { useNavigate } from "react-router";
 
 function ShopComponent() {
   const [data, setData] = useState([]);
@@ -12,6 +13,8 @@ function ShopComponent() {
   const [selectedCategory, setSelectedCategory] = useState(null);
   const [searchData, setSearchData] = useState("");
   const [selectedProduct, setSelectedProduct] = useState(null);
+  const token = localStorage.getItem("token")
+  const navigate = useNavigate()
 
   const { cart, handleAddProduct, setCart, UserId } = useContext(CartContext);
 
@@ -42,6 +45,7 @@ function ShopComponent() {
 
     fetchData();
   }, []);
+  console.log(cat)
 
   useEffect(() => {
     const data = localStorage.getItem("cart");
@@ -122,11 +126,11 @@ function ShopComponent() {
                     <header className="product-card__header">
                       <h2 className="product-card__title">{product.productName}</h2>
                           
-                      <p className="product-card__subtitle">{product.categoryId}</p>
+                      <p className="product-card__subtitle">{(cat.find(obj => obj._id === product.categoryId)).categoryName}</p>
                     </header>
                     <footer className="product-card__footer">
                       <span className="product-card__price">Price: {product.finalPrice} $</span>
-                      <button className="product-card__button" onClick={() => handleAddProduct(UserId, product._id, product.productName, 1, product.finalPrice, product.productImage)}>
+                      <button className="product-card__button" onClick={() => token? handleAddProduct(UserId, product._id, product.productName, 1, product.finalPrice, product.productImage) : navigate('/login') }>
                         <i className="product-card__icon ri-add-line"></i>
                       </button>
                     </footer>
