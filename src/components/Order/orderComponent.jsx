@@ -18,7 +18,7 @@ export default function Order() {
 
   useEffect(() => {
     fetchData();
-
+    console.log(data);
     setCartData(data);
   }, [data]);
   useEffect(() => {
@@ -68,7 +68,7 @@ export default function Order() {
         shippingAddress,
       }),
     };
-    fetch(`https://final-project-idzh.onrender.com/order/`, requestOptions)
+      fetch(`https://final-project-idzh.onrender.com/order/`, requestOptions)
     // fetch(`http://localhost:5000/order/`, requestOptions)
       .then((response) => {
         if (response.status === 200) {

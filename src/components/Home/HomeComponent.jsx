@@ -114,6 +114,7 @@ const settings = {
         </div>
 		<div class="parallax-container0">
 </div>
+  
       </div>
 	  <h2 className="skin-care">Skin Care</h2>
 

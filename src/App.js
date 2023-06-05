@@ -29,10 +29,10 @@ import UserAdmin from "./admin/user/User";
 import ContactUsAdmin from "./admin/contactus/ContactUsAdmin";
 import  {ProductProvider}  from "./components/Home/ProductContext";
 import ProductsAdd from "./admin/Products/ProductAdd";
+import ChatApp from "../src/Chat/chatApp"
+
 function App() {
-  useEffect(() => {
-    document.title = 'Pharma-shop';
-  }, []);
+
   const [showPopUp, setShowPopUp] = useState(false);
 
   function handleButtonClick() {
@@ -97,6 +97,8 @@ function App() {
               <Route exact path="/User" element={<User />} />
               <Route exact path="/order" element={<Order />} />
               <Route exact path="/login" element={<LoginP />} />
+              <Route exact path="/chat" element={<ChatApp />} />
+
             </Route>
 
           </Routes>

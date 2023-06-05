@@ -6,7 +6,7 @@ import cartLogo from "../../Assets/cartIcon.png";
 import cartLogoWhite from "../../Assets/cartIconWhite.png";
 import { Link } from "react-router-dom";
 import CartContext from "../Cart/CartContext";
-
+import weblogo from "../../Assets/MediQuickLogo.png"
 
 function Navbar({ onButtonClick }) {
   const [active, setActive] = useState(false);
@@ -28,7 +28,6 @@ function Navbar({ onButtonClick }) {
       setCart(JSON.parse(data));
     }
   }, []);
-
   const isActive = () => {
     window.scrollY > 0 ? setActive(true) : setActive(false);
   };
@@ -125,6 +124,16 @@ function Navbar({ onButtonClick }) {
             Contact us
           </Link>
           </li>
+          <li className="li">
+          <Link
+            className={`user${active ? "-b" : ""}${
+              location.pathname === "/chat" ? " lol" : ""
+            }`}
+            to="/chat"
+          >
+            Support chat
+          </Link>
+          </li>
        {loggedIn?<li className="li hidden">
           <p
           onClick={logOut}
@@ -140,7 +149,8 @@ function Navbar({ onButtonClick }) {
               src={ cartLogo}
               alt="edit"
               className="edit"
-            />        <span>{ cart.products.length}</span>
+            />        
+            <span>{ cart.products.length}</span>
 
           </Link>
         </div>

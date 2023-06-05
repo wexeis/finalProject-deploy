@@ -18,6 +18,7 @@ export function CartProvider({ children }) {
       const response = await fetch(`https://final-project-idzh.onrender.com/cart/${UserId}`);
       const dataFetched = await response.json();
       setData(dataFetched);
+      
 
     } catch (error) {
       // console.error(error);
