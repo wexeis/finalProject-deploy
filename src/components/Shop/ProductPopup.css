@@ -36,6 +36,8 @@
   .product-popup__image {
     max-width: 100%;
     height: auto;
+    max-height: 57vh;
+  
   }
   
   .product-popup__title {
