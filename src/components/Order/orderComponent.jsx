@@ -18,7 +18,7 @@ export default function Order() {
 
   useEffect(() => {
     fetchData();
-\    setCartData(data);
+    setCartData(data);
   }, [data]);
   useEffect(() => {
     localStorage.setItem('cart', JSON.stringify(cart));
