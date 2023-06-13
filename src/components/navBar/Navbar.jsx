@@ -69,7 +69,7 @@ function Navbar({ onButtonClick }) {
       <Link to="/" className="logo">
         <span>
           {" "}
-          <img src="#" alt="wlogo" className="header-logo" />
+            {/* <img src="#" alt="wlogo" className="header-logo" /> */}
         </span>
       </Link>
       <ul className={menu}>

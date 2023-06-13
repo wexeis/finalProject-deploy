@@ -19,14 +19,11 @@ export default function Home() {
 
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  console.log(product)
 
   const otc = product.filter((item)=> item.categoryId == "64601589b7503cfd2a1fc405")
   const skinCare = product.filter((item)=> item.categoryId=="646017a4d6c25af8e2a6ac49")
 
-  console.log("hello")
-  console.log(skinCare)
-  console.log(otc)
+
 
   useEffect(() => {
     const interval = setInterval(() => {
