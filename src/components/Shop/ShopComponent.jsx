@@ -45,7 +45,6 @@ function ShopComponent() {
 
     fetchData();
   }, []);
-  console.log(cat)
 
   useEffect(() => {
     const data = localStorage.getItem("cart");

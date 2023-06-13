@@ -21,7 +21,6 @@ function Navbar({ onButtonClick }) {
   const loggedIn = localStorage.getItem("loggedIn");
   const { cart, setCart } = useContext(CartContext);
   const firstName =  localStorage.getItem("first name")
-  console.log(firstName)
   useEffect(() => {
     const data = localStorage.getItem("cart");
     if (data) {
